@@ -9,7 +9,7 @@ def hidden_init(layer):
     lim = 1. / np.sqrt(fan_in)
     return (-lim, lim)
 
-class ActorNN(nn.Module):
+class ActorNetwork(nn.Module):
     """Actor (Policy) Model."""
 
     def __init__(self, state_size, action_size, seed, fc1_units=512, fc2_units=256):
@@ -22,7 +22,7 @@ class ActorNN(nn.Module):
             fc1_units (int): Number of nodes in first hidden layer
             fc2_units (int): Number of nodes in second hidden layer
         """
-        super(ActorNN, self).__init__()
+        super(ActorNetwork, self).__init__()
         self.seed = torch.manual_seed(seed)
         self.fc1 = nn.Linear(state_size, fc1_units)
         self.fc2 = nn.Linear(fc1_units, fc2_units)
@@ -41,7 +41,7 @@ class ActorNN(nn.Module):
         return torch.tanh(self.fc3(x))
 
 
-class CriticNN(nn.Module):
+class CriticNetwork(nn.Module):
     """Critic (Value) Model."""
 
     def __init__(self, state_size, action_size, seed, fcs1_units=512, fc2_units=256):
@@ -54,7 +54,7 @@ class CriticNN(nn.Module):
             fcs1_units (int): Number of nodes in the first hidden layer
             fc2_units (int): Number of nodes in the second hidden layer
         """
-        super(CriticNN, self).__init__()
+        super(CriticNetwork, self).__init__()
         self.seed = torch.manual_seed(seed)
         self.fcs1 = nn.Linear(state_size, fcs1_units)
         self.fc2 = nn.Linear(fcs1_units + action_size, fc2_units)

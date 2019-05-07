@@ -1,6 +1,3 @@
-# individual network settings for each actor + critic pair
-# see networkforall for details
-
 from torch.optim import Adam
 import numpy as np
 
@@ -15,7 +12,7 @@ from collections import namedtuple, deque
 import random
 import copy
 
-from model import ActorNN, CriticNN
+from model import ActorNetwork, CriticNetwork
 
 #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 device = 'cpu'
@@ -27,7 +24,7 @@ class Critic:
         device,
         state_size, action_size, random_seed,
         gamma, TAU, lr, weight_decay,
-        checkpoint_folder = './'):
+        checkpoint_folder = './Saved_Model/'):
 
         self.DEVICE = device
 
@@ -44,8 +41,8 @@ class Critic:
         self.CHECKPOINT_FOLDER = checkpoint_folder
 
         # Critic Network (w/ Target Network)
-        self.local = CriticNN(state_size, action_size, random_seed).to(self.DEVICE)
-        self.target = CriticNN(state_size, action_size, random_seed).to(self.DEVICE)
+        self.local = CriticNetwork(state_size, action_size, random_seed).to(self.DEVICE)
+        self.target = CriticNetwork(state_size, action_size, random_seed).to(self.DEVICE)
         self.optimizer = optim.Adam(self.local.parameters(), lr=self.LR, weight_decay=self.WEIGHT_DECAY)
 
         self.checkpoint_full_name = self.CHECKPOINT_FOLDER + 'checkpoint_critic.pth'
@@ -128,7 +125,7 @@ class Actor:
         state_size, action_size, random_seed,
         memory, noise,
         lr, weight_decay,
-        checkpoint_folder = './'):
+        checkpoint_folder = './Saved_Model/'):
 
         self.DEVICE = device
 
@@ -145,8 +142,8 @@ class Actor:
         self.CHECKPOINT_FOLDER = checkpoint_folder
 
         # Actor Network (w/ Target Network)
-        self.local = ActorNN(state_size, action_size, random_seed).to(self.DEVICE)
-        self.target = ActorNN(state_size, action_size, random_seed).to(self.DEVICE)
+        self.local = ActorNetwork(state_size, action_size, random_seed).to(self.DEVICE)
+        self.target = ActorNetwork(state_size, action_size, random_seed).to(self.DEVICE)
         self.optimizer = optim.Adam(self.local.parameters(), lr=self.LR)
 
         self.checkpoint_full_name = self.CHECKPOINT_FOLDER + 'checkpoint_actor_' + str(self.KEY) + '.pth'
