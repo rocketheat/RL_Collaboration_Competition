@@ -13,41 +13,30 @@ The algorithm can be summarized with the following
 ![png](MADDPG.png)  
 
 ### Hyperparameters Used
-BUFFER_SIZE = int(1e6)  # replay buffer size
-BATCH_SIZE = 128        # minibatch size
-GAMMA = 0.99            # discount factor
-TAU = 2e-1              # for soft update of target parameters
-LR_ACTOR = 1e-4         # learning rate of the actor
-LR_CRITIC = 3e-4        # learning rate of the critic
-WEIGHT_DECAY = 0        # L2 weight decay
+BUFFER_SIZE = int(1e6)  # replay buffer size  
+BATCH_SIZE = 128        # minibatch size  
+GAMMA = 0.99            # discount factor  
+TAU = 2e-1              # for soft update of target parameters  
+LR_ACTOR = 1e-4         # learning rate of the actor  
+LR_CRITIC = 3e-4        # learning rate of the critic  
+WEIGHT_DECAY = 0        # L2 weight decay  
 
-ADD_NOISE = True
-SEED = 2
+ADD_NOISE = True  
+SEED = 2  
 
-N_EPISODES = 3000
+N_EPISODES = 3000  
 
 ### All four networks structure: two hidden layers with size (512, 256)
-fc1_units = 512
-fc2_units = 256
+fc1_units = 512  
+fc2_units = 256  
 
 ### Results of the analysis:
 Episode 0	Average Score: 0.00  
-Episode 100	Average Score: 0.01  
-Episode 200	Average Score: 0.03  
-Episode 300	Average Score: 0.09  
-Episode 400	Average Score: 0.11  
-Episode 500	Average Score: 0.12  
-Episode 600	Average Score: 0.15  
-Episode 700	Average Score: 0.19  
-Episode 800	Average Score: 0.21  
-Episode 900	Average Score: 0.27  
-Episode 1000	Average Score: 0.20  
-Episode 1100	Average Score: 0.24  
-Episode 1200	Average Score: 0.29  
-Episode 1300	Average Score: 0.31  
-Episode 1377	Average Score: 0.52  
-Environment solved in 1277 episodes!	Average Score: 0.52   
-
+Episode 100	Average Score: 0.04  
+Episode 200	Average Score: 0.27  
+Episode 279	Average Score: 0.51  
+Environment solved in 179 episodes!	Average Score: 0.51  
+  
 ![png](model.png)  
 
 ![Agent](./model_test.gif)  
