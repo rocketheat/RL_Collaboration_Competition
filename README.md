@@ -39,3 +39,9 @@ Collaboration and Competition.ipynb: jupyter notebook environment to train the e
 Report.md: Contains the analysis report.  
 run.py: to test the trained network.  
 train.py: contains the agent description.  
+
+### Instructions:
+For using this repostiory all what you need to do is:  
+1. Clone the environment.
+2. To train the agent you need to run the jupyter notebook "Collaboration and Competition".  
+3. To test the RL agent you run run.py  
