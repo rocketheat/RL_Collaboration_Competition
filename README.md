@@ -20,6 +20,16 @@ Visual Observations: None.
 Reset Parameters: One, corresponding to size of ball.  
 Target Goal: verage score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents).  
 
+Details about this environment can be found here: https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#tennis  
+
+### Environment Download Instructions:
+For this project, you will not need to install Unity - this is because we have already built the environment for you, and you can download it from one of the links below. You need only select the environment that matches your operating system:  
+
+Linux: https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip  
+Mac OSX: https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip  
+Windows (32-bit): https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86.zip  
+Windows (64-bit): https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86_64.zip  
+
 ### Repository Description:
 
 Tennis.app the environment  
